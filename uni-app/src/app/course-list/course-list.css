@@ -1,0 +1,22 @@
+
+td, th {
+    border: solid 1px;
+}
+
+th {
+    text-align: center;
+    cursor: pointer;
+}
+
+.credits-active {
+    background-color: lime;
+}
+
+.no-credits {
+    background-color: red;
+}
+
+.required-course {
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<h3>Courses</h3>
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Credits</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Action</th>
+    </thead>
+    
+    @for(course of courses; track course.id)
+    {
+        <tr>
+            <td>{{ course.id }}</td>
+            <td [class.required-course]="course.type === 'required'">{{ course.name }}</td>
+            <td>{{ course.code }}</td>
+            <td [class]="{ 'credits-active': course.credits > 0, 'no-credits': course.credits === 0 }">
+                @if(course.credits > 0){
+                <span>{{ course.credits }}</span>
+                }
+                @else {
+                    -
+                }
+
+            </td>
+            <td>{{ course.type }}</td>
+            <td>{{ getStatus(course) }}</td>
+            <td><button (click)="onDelete(course)">Delete</button></td>
+        </tr>
+    }
+    @empty {
+        <tr>
+            <td colspan="7">No courses available</td>
+        </tr>
+    }
+</table>
