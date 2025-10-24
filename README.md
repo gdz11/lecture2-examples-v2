@@ -1,1 +1,1 @@
-# lecture2-examples-v2
+# Lecture 2 examples
